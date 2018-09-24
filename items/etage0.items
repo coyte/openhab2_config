@@ -1,0 +1,30 @@
+//Items etage 0
+//Espresso apparaat
+Switch Espresso 			"Espresso" 					<espresso>			[ "Switchable" ]			{ channel="zwave:device:62000b2a:node20:switch_binary" }
+
+//Eiland
+Dimmer etage0KeukenEilandDimmer		"Eiland"									[ "Lighting" ]			{ channel="zwave:device:62000b2a:node26:switch_dimmer" }
+Contact etage0KeukenEilandSensor	"Eiland Sensor"													{ channel="zwave:device:62000b2a:node26:sensor_binary" }
+
+//Koof
+Dimmer etage0KeukenKoofDimmer		"Koof"										[ "Lighting" ]			{ channel="zwave:device:62000b2a:node38:switch_dimmer" }
+Number etage0KeukenKoofSensor1		"Koof Sensor1"													{ channel="zwave:device:62000b2a:node38:sensor_binary" }
+//Number etage0KeukenKoofSensor2	"Koof Sensor2"													{ channel="zwave:device:62000b2a:node27:sensor_binary2" }
+
+
+//Tafel
+Dimmer etage0KeukenTafelDimmer		"Tafel"										[ "Lighting" ]			{ channel="zwave:device:62000b2a:node28:switch_dimmer" }
+Contact etage0KeukenTafelSensor		"Tafel Sensor"													{ channel="zwave:device:62000b2a:node28:sensor_binary" }
+
+//Multisensor WC
+Contact etage0WCMotion			"Etage0 Motion [MAP(motion.map):%s]"		<motion>			(gSensor0)			{ channel="zwave:device:62000b2a:node2:sensor_binary" }
+Number  etage0WCHumidity		"Etage0 Humidity [%.1f %%]"			<humidity>			(gSensor0,gPersist)		{ channel="zwave:device:62000b2a:node2:sensor_relhumidity" }
+Number etage0WCTemperatuur		"Etage0 Temperatuur [%.1f °C]"			<temperature>			(gSensor0,gTemp,gPersist)	{ channel="zwave:device:62000b2a:node2:sensor_temperature" }
+Number  etage0WCLuminance		"Etage0 Luminantie [%.1f lux]"			<sun>				(gSensor0)			{ channel="zwave:device:62000b2a:node2:sensor_luminance" }
+Number  etage0WCBatterij		"Etage0 Battery [%s %%]"			<battery>			(gSensor0,gBattery)		{ channel="zwave:device:62000b2a:node2:battery-level" }
+
+//Brandmelder gang
+Number etage0BrandmelderTemperatuur	"Brandmelder 0 Temp [%.1f °C]"			<temperature>			(gTemp,gPersist)		{ channel="zwave:device:62000b2a:node4:sensor_temperature" }
+Switch etage0BrandmelderRookAlarm	"Brandmelder 0 Rook [MAP(smoke.map):%s]"	<smoke>				(gAlarm)			{ channel="zwave:device:62000b2a:node4:alarm_smoke" }
+Switch etage0BrandmelderHitteAlarm	"Brandmelder 0 Hitte [MAP(heat.map):%s]"	<fire>				(gAlarm)			{ channel="zwave:device:62000b2a:node4:alarm_heat" }
+

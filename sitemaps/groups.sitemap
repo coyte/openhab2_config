@@ -1,0 +1,16 @@
+sitemap groups label="groups" {
+
+    
+    Frame label="Sensoren en melders" {
+    Group item=gBattery
+    Group item=gSensor0
+    Group item=gSensor2
+    Group item=gTemp
+    Group item=gAlarm
+    Group item=gP1
+    Group item=gPv
+    }
+
+
+
+}

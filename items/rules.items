@@ -1,0 +1,13 @@
+Switch ruleTrigger
+String   ruleItem
+
+Number Fan
+Number badTemp
+Number kitchenScene
+Switch knipper
+
+
+//Switch Test "Test [%s]"  {exec=">[ON: node /etc/openhab2/scripts/njstuya.js -ip 192.168.15.228 -id 06200971dc4f2238b6ad -key 46a3b8475bdb5423 ON] >[OFF: node /etc/openhab2/scripts/python/njstuya.js -ip 192.168.15.228 -id 06200971dc4f2238b6ad -key 46a3b8475bdb5423 OFF]" }
+
+
+

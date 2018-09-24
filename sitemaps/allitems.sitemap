@@ -1,0 +1,91 @@
+sitemap allitems label="allitems" {
+Frame label="etage0" {
+  Default item=ruleitem
+  Switch item=Espresso
+
+  Slider item=etage0KeukenEilandDimmer
+  Slider item=etage0KeukenTafelDimmer
+  Slider item=etage0KeukenKoofDimmer
+
+  Text item=etage0WCMotion
+  Default item=etage0WCHumidity
+  Text item=etage0WCTemperatuur valuecolor=["Uninitialized"="gray", >=25="orange", >=15="green", 0="white", <15="blue"]
+  Default item=etage0WCLuminance
+  Default item=etage0WCBatterij
+
+  Text item=etage0BrandmelderTemperatuur valuecolor=["Uninitialized"="grey", >=25="orange", >=15="green", 0="white", <15="blue"]
+  Text item=etage0BrandmelderRookAlarm
+  Text item=etage0BrandmelderHitteAlarm
+
+  }
+
+Frame label="etage1" {
+	//Brandmelder
+	Text item=etage1BrandmelderTemperatuur valuecolor=["Uninitialized"="grey", >=25="orange", >=15="green", 0="white", <15="blue"]
+	Text item=etage1BrandmelderRookAlarm
+	Text item=etage1BrandmelderHitteAlarm
+	Default item=etage1BrandmelderBatterij
+
+  	//Lampen
+	Default item=etage1BankLamp
+	Default item=etage1StoelLamp
+	Default item=etage1TvLamp
+	Default item=etage1AchterLamp
+    }
+
+Frame label="etage2" {
+    Setpoint item=etage2BadkamerVerwarmingStand minValue=15 maxValue=26 step=0.5
+    Default item=etage2BadkamerVerwarmingBatterij
+
+    Text item=etage2BrandmelderTemperatuur valuecolor=["Uninitialized"="grey", >=25="orange", >=15="green", 0="white", <15="blue"]
+    Text item=etage2BrandmelderRookAlarm
+    Text item=etage2BrandmelderHitteAlarm
+
+	//Multisensor Badkamer
+    Text item=etage2BadkamerMotion
+    Default item=etage2BadkamerHumidity
+    Text item=etage2BadkamerTemperatuur valuecolor=["Uninitialized"="grey", >=25="orange", >=15="green", 0="white", <15="blue"]
+    Default item=etage2BadkamerLuminance
+    Default item=etage2BadkamerBatterij
+    }
+
+
+
+Frame label="etage3" {
+	Default item=etage3Ventilatie1
+	Default item=etage3Ventilatie2
+	Default item=etage3Ventilatie3
+	}
+
+Frame label="DSMR" {
+	Default	item=emeter_delivery_tariff1
+	Default	item=emeter_delivery_tariff2
+	Default item=emeter_production_tariff1
+	Default item=emeter_production_tariff2
+	//Default item=emeter_tariff_indicator
+	Default item=emeter_actual_delivery
+	Default item=emeter_actual_production
+	}
+Frame label="Zonnepanelen" {
+	Default item=pvPac
+	Default item=pvEtoday
+	Default item=pvEtotal
+	}
+
+  Frame label="Unused Items" {
+  	Default item=node33Dimmer
+  	Default item=node5Switch
+  	Default item=node8Switch
+  	}
+Frame label="Graph" {
+//Webview url="http://admin:TAspect01@oh2:3000/dashboard-solo/db/p1prodcons?orgId=1&panelId=1&theme=light" height=12
+Webview url="http://oh2:3000/dashboard-solo/db/p1prodcons?orgId=1&panelId=1&theme=light" height=12
+//Webview url="http://192.168.15.42/zm/cgi-bin/nph-zms?mode=jpeg&monitor=2&scale=50&maxfps=5&buffer=500" height=15
+}
+}
+
+
+
+//Webview url="http://admin:TAspect01@oh2:3000/dashboard/db/p1prodcons?orgId=1&panelId=1&fullscreen&theme=light" height=12
+//Webview url="http://oh2:3000/dashboard/db/p1prodcons?orgId=1" height=11
+//Webview url="http://admin:TAspect01@192.168.15.18:3000/dashboard/db/p1prodcons?edit&orgId=1&from=1497650400000&to=1497736799999&tab=metrics" height=11

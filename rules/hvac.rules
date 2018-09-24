@@ -1,0 +1,136 @@
+
+
+rule "badTempHigh"
+when
+	Item badTemp received command 2
+then
+	logInfo("rules","Rule badTempHigh runs")
+	etage2BadkamerVerwarmingStand.sendCommand(24)
+end
+
+rule "badTempLow"
+when
+	Item badTemp received command 1
+then
+	logInfo("rules","Rule badTempLow runs")
+	etage2BadkamerVerwarmingStand.sendCommand(17)
+end
+
+
+
+rule "FanHigh"
+when
+	Item Fan received command 3
+then
+	logInfo("rules","Rule FanHigh runs")
+	etage3Ventilatie2.sendCommand(OFF)
+	etage3Ventilatie3.sendCommand(ON)
+end
+
+rule "FanMed"
+when
+	Item Fan changed to 2
+then
+	logInfo("rules","Rule FanMed runs")
+	etage3Ventilatie2.sendCommand(ON)
+	etage3Ventilatie3.sendCommand(OFF)
+end
+
+rule "FanLow"
+when
+	Item Fan received command 1
+then
+	logInfo("rules","Rule FanLow runs")
+	etage3Ventilatie2.sendCommand(OFF)
+	etage3Ventilatie3.sendCommand(OFF)
+end
+
+
+
+
+
+rule "Auto_verwarming_badk_hoog_ochtend"
+when
+    Time cron "0 00 06 * * ?"
+then
+	logInfo("rules","Rule Auto_verwarming_badk_hoog_ochtend runs")
+	etage2BadkamerVerwarmingStand.sendCommand(25)
+end
+
+
+
+rule "Auto_verwarming_badk_laag_ochtend"
+when
+    Time cron "0 00 09 * * ?"
+then
+	logInfo("rules","Rule Auto_verwarming_badk_laag_ochtend runs")	
+	etage2BadkamerVerwarmingStand.sendCommand(14)
+end
+
+
+rule "Auto_verwarming_badk_hoog_avond"
+when
+    Time cron "0 30 18 * * ?"
+then
+	logInfo("rules","Rule Auto_verwarming_badk_hoog_avond runs")
+	etage2BadkamerVerwarmingStand.sendCommand(25)
+end
+
+rule "Auto_verwarming_badk_laag_avond"
+when
+    Time cron "0 00 22 * * ?"
+then
+	logInfo("rules","Rule Auto_verwarming_badk_laag_avond runs")
+	etage2BadkamerVerwarmingStand.sendCommand(14)
+end
+
+
+rule "Automatic ventilation"
+when
+	Item etage2BadkamerHumidity changed
+then
+	logInfo("rules","Rule automaticVentilation runs")
+	//Define threshold for fan activation as the maximum higher value of bathroom absolute humidity
+	var double dTreshhold = 1.5
+
+		//take humidity and temperature groundfloor
+		var Number n0Hum = etage0WCHumidity.state as DecimalType
+		var Number n0Temp = etage0WCTemperatuur.state as DecimalType
+		var Double d0Hum = n0Hum.doubleValue()
+		var Double d0Temp = n0Temp.doubleValue()
+		//logDebug("rules", "Variable type and Value d0Hum: " + d0Hum.getClass().getName() + " " + d0Hum)
+		//logDebug("rules", "Variable type and Value d0Temp: " + d0Temp.getClass().getName() + " " + d0Temp)
+
+		//take humidity and temperature bathroom
+		var Number n2Hum = etage2BadkamerHumidity.state as DecimalType
+		var Number n2Temp = etage2BadkamerTemperatuur.state as DecimalType
+		var Double d2Hum = n2Hum.doubleValue()
+		var Double d2Temp = n2Temp.doubleValue()
+		//logDebug("rules", "Variable type and Value d2Hum: " + d2Hum.getClass().getName() + " " + d2Hum)
+		//logDebug("rules", "Variable type and Value d2Temp: " + d2Temp.getClass().getName() + " " + d2Temp)
+
+
+
+		var Double d0AbsHum = (6.112 * ((17.67 * d0Temp)/(d0Temp + 243.5)) * d0Hum * 2.1674 ) / (273.15 + d0Temp)
+		var Double d2AbsHum = (6.112 * ((17.67 * d2Temp)/(d2Temp + 243.5)) * d2Hum * 2.1674 ) / (273.15 + d2Temp)
+		//logInfo("rules", "Calculated absolute humidity 0: " + d0AbsHum)
+		//logInfo("rules", "Calculated absolute humidity 2: " + d2AbsHum)
+
+
+
+		//compare the difference between humity levels and decide if the fan should be activated
+		if ((d2AbsHum-d0AbsHum) > dTreshhold)
+			{
+				logInfo("rules","Rule automaticVentilation runs (high)")
+				etage3Ventilatie2.sendCommand(OFF)
+				etage3Ventilatie3.sendCommand(ON)
+			}
+		else
+			{
+				logInfo("rules","Rule automaticVentilation runs (low)")
+				etage3Ventilatie2.sendCommand(OFF)
+				etage3Ventilatie3.sendCommand(OFF)
+			}
+
+
+end

@@ -1,0 +1,36 @@
+rule "kitchenOff"
+when
+	Item Verlichting received command "Off"
+then
+	logInfo("rules", "Keukenverlichting: Alles uit")
+	//etage0KeukenEilandDimmer.sendCommand(0)
+	//sendCommand(etage0KeukenKoofDimmer, 0)
+	//sendCommand(etage0KeukenTafelDimmer, 0)
+end
+
+rule "kitchenOn"
+when
+	Item etage0KeukenEilandSensor received update
+then
+//  sendCommand(etage0KeukenEilandDimmer, 65)
+//  sendCommand(etage0KeukenKoofDimmer, 80)
+//  sendCommand(etage0KeukenTafelDimmer, 80)
+end
+
+rule "kitchenCooking"
+when
+	Item etage0KeukenDeurSensor received update
+then
+//    sendCommand(etage0KeukenEilandDimmer, 90)
+//	sendCommand(etage0KeukenKoofDimmer, 50)
+//	sendCommand(etage0KeukenTafelDimmer, 70)
+end
+
+rule "kitchenDinner"
+when
+	Item etage0KeukenTafelSensor received update
+then
+//	sendCommand(etage0KeukenEilandDimmer, 15)
+//	sendCommand(etage0KeukenKoofDimmer, 20)
+//	sendCommand(etage0KeukenTafelDimmer, 20)
+end

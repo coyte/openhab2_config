@@ -1,0 +1,17 @@
+import java.util.String
+var tuyaScript = "node /etc/openhab2/scripts/njstuya.js "
+
+rule "tuyaDeviceCrtl"
+when
+	Member of gTuya changed
+then
+    val configItem = gTuya.members.findFirst[ t | t.name == triggeringItem.name+"_config" ] //get the config item
+	val configStr = configItem.label + " "
+
+	logInfo("rules", "tuyaDeviceCrtl - Member " + triggeringItem.name + " to " + triggeringItem.state)
+	//logInfo("rules", "tuyaDeviceCrtl - Config:" + configStr + ".")
+	
+    var String execResult
+	execResult = executeCommandLine(tuyaScript + configStr + triggeringItem.state, 50000)
+	logInfo("rules", "tuyaDeviceCrtl - ExecResult:" + execResult + ".")
+end

@@ -1,0 +1,10 @@
+//Items for PV import using PV.rules scraping omnikportal
+
+//DateTime	pvDateTime		"Laatste update [%1$ta %1$tR]"	<solarplant>	(gPv)
+Number		pvPac			"Now AC [%.1f kW]"				<solarplant>	(gPv,gPersist)
+Number		pvEtoday		"Productie vandaag [%.1f kWh]"	<solarplant>	(gPv,gPersist)
+Number		pvEtotal		"Productie energie [%.1f MWh]"	<solarplant>	(gPv,gPersist)
+
+Number		pv_new_pac			"NewNow AC [%.1f kW]"				<solarplant>	(gPv)
+Number		pv_new_etoday		"NewProductie vandaag [%.1f kWh]"	<solarplant>	(gPv)
+Number		pv_new_etotal		"NewProductie energie [%.1f MWh]"	<solarplant>	(gPv)

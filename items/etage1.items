@@ -1,0 +1,19 @@
+//Items etage 1
+//Brandmelder gang
+Number	etage1BrandmelderTemperatuur		"Brandmelder 1 Temp [%.1f °C]"			<temperature>	(gTemp,gPersist)			{ channel="zwave:device:62000b2a:node30:sensor_temperature" }
+Switch	etage1BrandmelderRookAlarm		"Brandmelder 1 Rook [MAP(smoke.map):%s]"	<fire>			(gAlarm)			{ channel="zwave:device:62000b2a:node30:alarm_smoke" }
+Switch	etage1BrandmelderHitteAlarm		"Brandmelder 1 Hitte [MAP(heat.map):%s]"	<fire>			(gAlarm)			{ channel="zwave:device:62000b2a:node30:alarm_heat" }
+Number	etage1BrandmelderBatterij		"Brandmelder 1 Batterij [%s %%]"			<battery>		(gBattery)      	{ channel="zwave:device:62000b2a:node30:battery-level" }
+
+//Lamp bij bank
+Switch etage1BankLamp				"Lamp bij bank"					[ "Lighting" ]						{ channel="zwave:device:62000b2a:node5:switch_binary" }
+
+//Lamp bij stoel
+Switch etage1StoelLamp				"Lamp bij stoel"				[ "Lighting" ]						{ channel="zwave:device:62000b2a:node8:switch_binary" }
+
+//Lamp naast TV
+//Switch	etage1TvLamp				"Lamp naast TV"					[ "Lighting" ]						{ channel="zwave:device:62000b2a:node6:switch_binary" }
+
+//Lamp naast TV
+//Switch	etage1AchterLamp			"Lamp Achterkamer"				[ "Lighting" ]						{ channel="zwave:device:62000b2a:node7:switch_binary" }
+

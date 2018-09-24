@@ -1,0 +1,18 @@
+// Item in error
+//Dimmer node33Dimmer "node33Dimmer" { channel="zwave:device:62000b2a:node33:switch_dimmer" }
+//Switch node5Switch "node5Switch" { channel="zwave:device:62000b2a:node5:switch_binary" }
+
+//items for rules
+Switch ruleitem "ruleitem"
+Switch KeukenVerlichting "Verlichting" [ "Verlichting"]
+
+//Switch node35_Switch "Aeotec Nano Dimmer Switch" { channel="zwave:device:62000b2a:node35:switch_binary" }
+//Dimmer node35_Dimmer "Aeotec Nano Dimmer Dimmer" { channel="zwave:device:62000b2a:node35:switch_dimmer" }
+//Number node35_Scene "Aeotec Nano Dimmer Scenenr" { channel="zwave:device:62000b2a:node35:scene_number" }
+//Number node35_Meter_Kwh "Aeotec Nano Dimmer Meter KwH" { channel="zwave:device:62000b2a:node35:meter_kwh" }
+//Number node35_Meter_Watt "Aeotec Nano Dimmer Meter Watts" { channel="zwave:device:62000b2a:node35:meter_watts" }
+//Number node35_Meter_Volts "Aeotec Nano Dimmer Meter Volts" { channel="zwave:device:62000b2a:node35:meter_voltage" }
+//Number node35_Meter_Amps "Aeotec Nano Dimmer Meter Amps" { channel="zwave:device:62000b2a:node35:meter_current" }
+//Switch node35_Alarm_Power "Aeotec Nano Dimmer Alarm Power" { channel="zwave:device:62000b2a:node35:alarm_power" }
+//Switch node35_Alarm_Heat "Aeotec Nano Dimmer Alarm Heat" { channel="zwave:device:62000b2a:node35:alarm_heat" }
+//Number node35_Clock_Offset "Aeotec Nano Dimmer Clock Offset" { channel="zwave:device:62000b2a:node35:time_offset" }

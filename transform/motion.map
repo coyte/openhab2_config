@@ -1,0 +1,4 @@
+OFF=No Motion
+ON=Motion
+NULL=No value
+-=Not active

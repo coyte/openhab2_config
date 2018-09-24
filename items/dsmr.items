@@ -1,0 +1,9 @@
+//Items for Main electricity meter thing
+Number	emeter_delivery_tariff1		"eMeter afname I [%.1f kWh]"		<energy>	(gP1,gPersist)
+Number	emeter_delivery_tariff2		"eMeter afname II [%.1f kWh]"		<energy>	(gP1,gPersist)
+Number	emeter_production_tariff1	"eMeter productie I [%.1f kWh]"		<energy>	(gP1,gPersist)
+Number	emeter_production_tariff2	"eMeter productie II [%.1f kWh]"	<energy>	(gP1,gPersist)
+Number	emeter_actual_delivery		"emeter huidige afname [%.1f kW]"	<energy>	(gP1,gPersist)
+Number	emeter_actual_production	"emeter huidige productie [%.1f kW]"	<energy>	(gP1,gPersist)
+Number	emeter_delivery			"Afgenomen  [%.1f kWh]"			<energy_red>	(gP1,gPersist)
+Number	emeter_production		"Teruglevering [%.1f kWh]"		<energy_green>	(gP1,gPersist)

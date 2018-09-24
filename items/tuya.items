@@ -1,0 +1,6 @@
+//Tuya items
+Switch tuyasw001 "Tuya 01" (gTuya)
+String tuyasw001_config "-ip 192.168.15.228 -id 06200971dc4f2238b6ad -key 46a3b8475bdb5423" (gTuya)
+
+Switch tuyasw002 "Tuya 02" (gTuya)
+String tuyasw002_config "-ip 192.168.15.234 -id 0720006884f3eb84a9da -key e64e284602eae1dd" (gTuya)

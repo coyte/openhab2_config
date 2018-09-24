@@ -1,0 +1,10 @@
+Strategies {
+    everyMinute :	"0 * * * * ?"
+    everyHour   :	"0 0 * * * ?"
+    everyDay    :	"0 0 0 * * ?"
+    every5Min	:	"0 0/5 5-23 * * ?"
+}
+
+Items {
+	gPersist*	:	strategy =  everyMinute, restoreOnStartup
+}

@@ -1,0 +1,6 @@
+//Items etage 3
+
+//Ventilatie
+Switch etage3Ventilatie1      "Ventilatie1"    <ventilation>    { channel="zwave:device:62000b2a:node12:switch_binary1" }
+Switch etage3Ventilatie2      "Ventilatie2"        { channel="zwave:device:62000b2a:node12:switch_binary2" }
+Switch etage3Ventilatie3      "Ventilatie3"        { channel="zwave:device:62000b2a:node12:switch_binary3" }

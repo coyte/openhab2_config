@@ -1,0 +1,4 @@
+OFF=Normal
+ON=Alarm
+NULL=No value
+-=Not active

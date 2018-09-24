@@ -1,0 +1,15 @@
+rule "Switch coffee machine off"
+when
+    Time cron "0 30 21 * * ?"
+then
+	logInfo("rules","Rule espresso runs (off)")
+   	 Espresso.sendCommand(OFF)
+end
+
+rule "Switch coffee machine on"
+when
+    Time cron "0 30 6 * * ?"
+then
+    	logInfo("rules","Rule espresso runs (on)")
+    	Espresso.sendCommand(ON)
+end

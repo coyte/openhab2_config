@@ -1,0 +1,114 @@
+//Lampen begane grond
+rule "keukenAan"
+when
+    Time cron "0 37 19 * * ?"
+then
+    logInfo("rules", "Holiday: Keukenlampen Aan")
+    etage0KeukenKoofDimmer.sendCommand(100)
+    etage0KeukenTafelDimmer.sendCommand(100)
+end
+
+rule "keukenUit"
+when
+    Time cron "0 48 23 * * ?"
+then
+    logInfo("rules", "Holiday: Keukenlampen Uit")
+    etage0KeukenKoofDimmer.sendCommand(0)
+    etage0KeukenTafelDimmer.sendCommand(0)
+end
+
+
+
+//Lamper 1ste
+//Lamp bij TV
+rule "TVLampAan"
+when
+    Time cron "0 30 20 * * ?"
+then
+    logInfo("rules", "Holiday: TVlamp Aan")
+    etage1TvLamp.sendCommand(ON)
+end
+
+rule "TVLampUit"
+when
+    Time cron "0 30 0 * * ?"
+then
+    logInfo("rules","Holiday: TVlamp uit")
+    etage1TvLamp.sendCommand(OFF)
+end
+
+
+
+
+//Lamp stoel
+rule "stoelLampAan"
+when
+    Time cron "0 32 20 * * ?"
+then
+    logInfo("rules", "Holiday: Stoellamp Aan")
+    etage1StoelLamp.sendCommand(100)
+end
+
+rule "Stoellampuit"
+when
+    Time cron "0 32 0 * * ?"
+then
+    logInfo("rules", "Holiday: Stoellamp Uit")
+    etage1StoelLamp.sendCommand(0)
+end
+
+
+
+
+//Lamp achterkamer
+rule "AchterkamerlampAAN"
+when
+    Time cron "0 33 20 * * ?"
+then
+    logInfo("rules", "Holiday: Achterlamp Aan")
+    etage1AchterLamp.sendCommand(ON)
+end
+
+rule "AchterkamerlampUIT"
+when
+    Time cron "0 33 0 * * ?"
+then
+    logInfo("rules", "Holiday: Achterlamp Uit")
+    etage1AchterLamp.sendCommand(OFF)
+end
+
+
+
+//Lamp bank
+rule "stoelLampAan"
+when
+    Time cron "0 35 20 * * ?"
+then
+    logInfo("rules", "Holiday: banklamp Aan")
+    etage1BankLamp.sendCommand(100)
+end
+
+rule "Stoellampuit"
+when
+    Time cron "0 35 0 * * ?"
+then
+    logInfo("rules", "Holiday: banklamp Aan")
+    etage1BankLamp.sendCommand(0)
+end
+
+//Staande lamp werkkamer
+rule "staandeLampAan"
+when
+    Time cron "0 31 22 * * ?"
+then
+    logInfo("rules", "Holiday: staandeLampAan")
+    node8Switch.sendCommand(ON)
+end
+
+rule "staandeLampUit"
+when
+    Time cron "0 52 0 * * ?"
+then
+    logInfo("rules", "Holiday: staandeLampUit")
+    node8Switch.sendCommand(OFF)
+end
