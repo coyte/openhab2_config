@@ -13,11 +13,11 @@ Switch etage2BrandmelderRookAlarm	"Brandmelder 2 Rook  [MAP(smoke.map):%s]"	<fir
 Switch etage2BrandmelderHitteAlarm	"Brandmelder 2 Hitte  [MAP(heat.map):%s]"	<fire>		(gAlarm)									{ channel="zwave:device:62000b2a:node11:alarm_heat" }
 
 //Multisensor Badkamer
-Switch etage2BadkamerMotion		"Badkamer Motion [MAP(motion.map):%s]"      <motion>	(gSensor2)									{ channel="zwave:device:62000b2a:node9:sensor_binary" }
-Number  etage2BadkamerHumidity		"Badkamer Humidity [%.1f %%]"			<humidity>	(gSensor2,gPersist)							{ channel="zwave:device:62000b2a:node9:sensor_relhumidity" }
-Number etage2BadkamerTemperatuur	"Badkamer Temperatuur [%.1f °C]"		<temperature>	(gSensor2,gTemp,gPersist,getage2BadkamerThermostaat) [ "CurrentTemperature" ]	{ channel="zwave:device:62000b2a:node9:sensor_temperature" }
-Number  etage2BadkamerLuminance		"Badkamer Luminance [%.1f lux]"			<sun>		(gSensor2)									{ channel="zwave:device:62000b2a:node9:sensor_luminance" }
-Number  etage2BadkamerBatterij		"Badkamer Battery [%s %%]"			<battery>	(gBattery,gSensor2)								{ channel="zwave:device:62000b2a:node9:battery-level" }
+Switch etage2BadkamerMotion		"Badkamer Motion [MAP(motion.map):%s]"      <motion>	(gSensor2)									{ channel="zwave:device:62000b2a:node40:sensor_binary" }
+Number  etage2BadkamerHumidity		"Badkamer Humidity [%.1f %%]"			<humidity>	(gSensor2,gPersist)							{ channel="zwave:device:62000b2a:node40:sensor_relhumidity" }
+Number etage2BadkamerTemperatuur	"Badkamer Temperatuur [%.1f °C]"		<temperature>	(gSensor2,gTemp,gPersist,getage2BadkamerThermostaat) [ "CurrentTemperature" ]	{ channel="zwave:device:62000b2a:node40:sensor_temperature" }
+Number  etage2BadkamerLuminance		"Badkamer Luminance [%.1f lux]"			<sun>		(gSensor2)									{ channel="zwave:device:62000b2a:node40:sensor_luminance" }
+Number  etage2BadkamerBatterij		"Badkamer Battery [%s %%]"			<battery>	(gBattery,gSensor2)								{ channel="zwave:device:62000b2a:node40:battery-level" }
 
 
 

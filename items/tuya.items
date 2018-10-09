@@ -1,6 +1,13 @@
 //Tuya items
-Switch tuyasw001 "Tuya 01" (gTuya)
-String tuyasw001_config "-ip 192.168.15.228 -id 06200971dc4f2238b6ad -key 46a3b8475bdb5423" (gTuya)
+Switch tuyasw001 "Lamp Stoel" (gTuya)
+String tuyasw001_config "-ip esp-38b6ad -id 06200971dc4f2238b6ad -key 46a3b8475bdb5423" (gTuya)
+//String tuyasw001_config "-ip 192.168.15.228 -id 06200971dc4f2238b6ad -key 46a3b8475bdb5423" (gTuya)
 
-Switch tuyasw002 "Tuya 02" (gTuya)
-String tuyasw002_config "-ip 192.168.15.234 -id 0720006884f3eb84a9da -key e64e284602eae1dd" (gTuya)
+Switch tuyasw002 "Lamp TV" (gTuya)
+String tuyasw002_config "-ip esp-84a9da -id 0720006884f3eb84a9da -key e64e284602eae1dd" (gTuya)
+
+Switch tuyasw003 "Lamp bank" (gTuya)
+String tuyasw003_config "-ip esp-84bdb4 -id 0720006884f3eb84bdb4 -key c5d470f4e09caa07" (gTuya)
+
+Switch tuyasw004 "Tuya 04" (gTuya)
+String tuyasw004_config "-ip hostname -id 06200632dc4f2238bc3f -key abc58560b5e6ee87" (gTuya)

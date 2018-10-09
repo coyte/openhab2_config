@@ -24,7 +24,7 @@ Number  etage0WCLuminance		"Etage0 Luminantie [%.1f lux]"			<sun>				(gSensor0)	
 Number  etage0WCBatterij		"Etage0 Battery [%s %%]"			<battery>			(gSensor0,gBattery)		{ channel="zwave:device:62000b2a:node2:battery-level" }
 
 //Brandmelder gang
-Number etage0BrandmelderTemperatuur	"Brandmelder 0 Temp [%.1f °C]"			<temperature>			(gTemp,gPersist)		{ channel="zwave:device:62000b2a:node4:sensor_temperature" }
-Switch etage0BrandmelderRookAlarm	"Brandmelder 0 Rook [MAP(smoke.map):%s]"	<smoke>				(gAlarm)			{ channel="zwave:device:62000b2a:node4:alarm_smoke" }
-Switch etage0BrandmelderHitteAlarm	"Brandmelder 0 Hitte [MAP(heat.map):%s]"	<fire>				(gAlarm)			{ channel="zwave:device:62000b2a:node4:alarm_heat" }
+Number etage0BrandmelderTemperatuur	"Brandmelder 0 Temp [%.1f °C]"			<temperature>			(gTemp,gPersist)		{ channel="zwave:device:62000b2a:node39:sensor_temperature" }
+Switch etage0BrandmelderRookAlarm	"Brandmelder 0 Rook [MAP(smoke.map):%s]"	<smoke>				(gAlarm)			{ channel="zwave:device:62000b2a:node39:alarm_smoke" }
+Switch etage0BrandmelderHitteAlarm	"Brandmelder 0 Hitte [MAP(heat.map):%s]"	<fire>				(gAlarm)			{ channel="zwave:device:62000b2a:node39:alarm_heat" }
 

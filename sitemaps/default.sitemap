@@ -1,19 +1,24 @@
 sitemap default label="Default" {
 
 	Frame label="BG" {
-		//Switch item=ruleTrigger
-		Switch item=tuyasw001
-		Switch item=tuyasw002
-		
-		
+		Switch item=tasmota01
+		Switch item=tasmota02
+		Switch item=tasmota03
+		Switch item=tasmota04
+		Switch item=tasmota05
+		Switch item=ruleTrigger
 		Switch item=Espresso
-		
 		Slider item=etage0KeukenEilandDimmer
 		Slider item=etage0KeukenTafelDimmer
 		Slider item=etage0KeukenKoofDimmer
 	}
 
 	Frame label="1ste" {
+		Switch item=tuyasw001
+		Switch item=tuyasw002
+		Switch item=tuyasw003
+		Switch item=tuyasw004
+		
 		Default item=etage1BankLamp
 		Default item=etage1StoelLamp
 		Default item=etage1TvLamp
@@ -60,20 +65,5 @@ sitemap default label="Default" {
 		Group item=gTemp
 		Group item=gAlarm
 	}
-
-Frame label="Aeotec Nano Dimmer" {
-		Default item=node35_Switch
-		Default item=node35_Dimmer
-		Default item=node35_Scene
-		Default item=node35_Meter_Kwh
-		Default item=node35_Meter_Watt
-		Default item=node35_Meter_Volts
-		Default item=node35_Meter_Amps
-		Default item=node35_Alarm_Power
-		Default item=node35_Alarm_Heat
-		Default item=node35_Clock_Offset
-
-	}
-
 
  }

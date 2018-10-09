@@ -1,0 +1,57 @@
+//import java.util.String
+import java.util.concurrent.locks.ReentrantLock
+import java.util.concurrent.TimeUnit
+
+
+val tuyaScript = "node /etc/openhab2/scripts/njstuya.js "
+val ReentrantLock latch = new ReentrantLock
+
+rule "tuya"
+when
+    Item ruleTrigger changed or
+    Member of gTuya changed
+    //Time cron "0 0/1 * 1/1 * ? *"
+then
+	try { 
+        // Wait for lock and run example
+        latch.lock 
+        logInfo("rules", "Tuya -- Latch locked") 
+        if (gTuya.members.filter[ t | t.name == triggeringItem.name].size > 0)  {
+            //Set Tuya item to new state
+            logInfo("rules", "Tuya -- New state -- Triggering item name: " + triggeringItem.name)
+	        val configItem = gTuya.members.findFirst[ t | t.name == triggeringItem.name+"_config" ] //get the config item
+	        val configStr = configItem.label + " "
+
+	        logInfo("rules", "Tuya - Member " + triggeringItem.name + " to " + triggeringItem.state)
+	        //logInfo("rules", "Tuya - Config:" + configStr + ".")
+	
+            var String execResult
+	        execResult = executeCommandLine(tuyaScript + configStr + triggeringItem.state, 50000)
+	        logInfo("rules", "Tuya - ExecResult:" + execResult + ".")
+       } else {
+            //Check and update status
+            logInfo("rules", "Tuya -- Status updates --  Triggering item name: " + triggeringItem.name)
+            gTuya.members.forEach [ item | {
+            if (item.name.substring(item.name.length()-7) == "_config") {
+                val idstring = item.name.substring(0,9)
+                //logInfo("rules", "Tuya -- Activiteit voor config item")
+                val configStr = item.label
+                var String tuyaState
+                tuyaState = executeCommandLine(tuyaScript + configStr, 50000)
+                logInfo("rules", "Tuya - Status "+ idstring +": " + tuyaState)
+                idstring.postUpdate(tuyaState)
+                }
+            } ]
+        }
+        if(latch.tryLock(0, TimeUnit.SECONDS)){
+            //logInfo("rules", "Tuya -- Locked cannot proceed")
+        }
+    } 
+    catch(Exception e) {
+        logError("rules", "Tuya -- Error occured in Latched Rule! " + e.toString)
+    } 
+    finally { 
+        latch.unlock
+        logInfo("rules", "Tuya -- Latch unlocked") 
+    }    
+end
