@@ -6,6 +6,7 @@ sitemap default label="Default" {
 		Switch item=tasmota03
 		Switch item=tasmota04
 		Switch item=tasmota05
+		Switch item=tasmota06
 		Switch item=ruleTrigger
 		Switch item=Espresso
 		Slider item=etage0KeukenEilandDimmer

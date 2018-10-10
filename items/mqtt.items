@@ -3,3 +3,4 @@ Switch tasmota02 "tasmota02" <light> (LR,gLight) { mqtt=">[mosquitto:cmnd/tasmot
 Switch tasmota03 "tasmota03" <light> (LR,gLight) { mqtt=">[mosquitto:cmnd/tasmota03/power:command:*:default],<[mosquitto:stat/tasmota03/POWER:state:default]" }
 Switch tasmota04 "tasmota04" <light> (LR,gLight) { mqtt=">[mosquitto:cmnd/tasmota04/power:command:*:default],<[mosquitto:stat/tasmota04/POWER:state:default]" }
 Switch tasmota05 "tasmota05" <light> (LR,gLight) { mqtt=">[mosquitto:cmnd/tasmota05/power:command:*:default],<[mosquitto:stat/tasmota05/POWER:state:default]" }
+Switch tasmota06 "tasmota06" <light> (LR,gLight) { mqtt=">[mosquitto:cmnd/tasmota06/power:command:*:default],<[mosquitto:stat/tasmota06/POWER:state:default]" }
