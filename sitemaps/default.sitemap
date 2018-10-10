@@ -7,6 +7,10 @@ sitemap default label="Default" {
 		Switch item=tasmota04
 		Switch item=tasmota05
 		Switch item=tasmota06
+		
+		
+		
+
 		Switch item=ruleTrigger
 		Switch item=Espresso
 		Slider item=etage0KeukenEilandDimmer
@@ -15,10 +19,8 @@ sitemap default label="Default" {
 	}
 
 	Frame label="1ste" {
-		Switch item=tuyasw001
-		Switch item=tuyasw002
-		Switch item=tuyasw003
-		Switch item=tuyasw004
+		Switch item=tasmota08
+		Switch item=tasmota07
 		
 		Default item=etage1BankLamp
 		Default item=etage1StoelLamp
