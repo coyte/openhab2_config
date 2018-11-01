@@ -1,6 +1,9 @@
 //Items etage 0
-//Espresso apparaat
-Switch Espresso 			"Espresso" 					<espresso>			[ "Switchable" ]			{ channel="zwave:device:62000b2a:node20:switch_binary" }
+//Espresso apparaat - zet zichzelf na verloop van tijd weer uit
+Switch Espresso 			"Espresso" 					<espresso>			[ "Switchable" ]			{ channel="zwave:device:62000b2a:node20:switch_binary" , expire="15h,command=OFF" }
+Switch Espressotimer 			                                                                        { channel="zwave:device:62000b2a:node20:switch_binary" }
+
+
 
 //Eiland
 Dimmer etage0KeukenEilandDimmer		"Eiland"									[ "Lighting" ]			{ channel="zwave:device:62000b2a:node26:switch_dimmer" }

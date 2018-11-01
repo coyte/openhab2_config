@@ -1,16 +1,6 @@
 sitemap default label="Default" {
 
 	Frame label="BG" {
-		Switch item=tasmota01
-		Switch item=tasmota02
-		Switch item=tasmota03
-		Switch item=tasmota04
-		Switch item=tasmota05
-		Switch item=tasmota06
-		
-		
-		
-
 		Switch item=ruleTrigger
 		Switch item=Espresso
 		Slider item=etage0KeukenEilandDimmer
@@ -21,17 +11,12 @@ sitemap default label="Default" {
 	Frame label="1ste" {
 		Switch item=tasmota08
 		Switch item=tasmota07
-		
-		Default item=etage1BankLamp
-		Default item=etage1StoelLamp
-		Default item=etage1TvLamp
-		Default item=etage1AchterLamp
-		Default item=kerstboom
+		Default item=tasmota09
 	}
 
 	Frame label="2de" {
 		Setpoint item=etage2BadkamerVerwarmingStand
-		//Default item=etage2BadkamerVerwarmingBatterij
+		Default item=tasmota10
 	}
 
     Frame label="Ventilatie" {
@@ -42,26 +27,19 @@ sitemap default label="Default" {
 
 
 	Frame label="Energy" icon="energy" {
-		//Webview url="http://192.168.15.25:3000/d/_rmIokMik/openhab?panelId=8&fullscreen&edit&orgId=1&tab=display&from=now%2Fw&to=now&theme=light" height=12
 		Webview url="http://192.168.15.25:3000/d-solo/_rmIokMik/openhab?orgId=1&&from=now%2Fd&to=now&panelId=4&theme=light" height=12
-		//Webview url="http://192.168.15.25:3000/d/_rmIokMik/openhab?orgId=1&theme=light" height=12
-
-		//Webview url="http://docker.teekens.info:3000/dashboard/db/electriciteit?panelId=1&fullscreen&orgId=1" height=12
-                Default item=emeter_delivery
-                Default item=emeter_production
-                Default item=pvEtoday
+		Default item=emeter_delivery
+        Default item=emeter_production
+        Default item=pvEtoday
 		Default item=pvPac
 		Default item=pvEtotal
 	}
 
-
-
 	Frame label="CCTV Camera" icon="cctvcam" {
-		//Webview url="http://192.168.15.35:8081/zm/cgi-bin/nph-zms?mode=jpeg&monitor=1&scale=50&maxfps=5&buffer=500" height=12
-                Webview url="http://zoneminder/zm/cgi-bin/nph-zms?mode=jpeg&monitor=1&scale=50&maxfps=5&buffer=500" height=12
+        Webview url="http://zoneminder/zm/cgi-bin/nph-zms?mode=jpeg&monitor=1&scale=50&maxfps=5&buffer=500" height=12
 	}
 
- Frame label="Sensoren en melders" {
+	Frame label="Sensoren en melders" {
 		Group item=gBattery
 		Group item=gSensor0
 		Group item=gSensor2
@@ -69,4 +47,14 @@ sitemap default label="Default" {
 		Group item=gAlarm
 	}
 
+	Frame label="Ongebruikte tasmota's" {
+		Switch item=tasmota01
+		Switch item=tasmota02
+		Switch item=tasmota03
+		Switch item=tasmota04
+		Switch item=tasmota05
+		Switch item=tasmota06
+		Switch item=tasmota10
+	}
+		
  }

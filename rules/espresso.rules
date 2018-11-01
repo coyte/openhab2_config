@@ -1,15 +1,15 @@
 rule "Switch coffee machine off"
 when
-    Time cron "0 30 21 * * ?"
+    Time cron "0 30 9 * * ?"
 then
 	logInfo("rules","Rule espresso runs (off)")
-   	 Espresso.sendCommand(OFF)
+   	 Espressotimer.sendCommand(OFF)
 end
 
 rule "Switch coffee machine on"
 when
-    Time cron "0 30 6 * * ?"
+    Time cron "0 45 6 * * ?"
 then
-    	logInfo("rules","Rule espresso runs (on)")
-    	Espresso.sendCommand(ON)
+    logInfo("rules","Rule espresso runs (on)")
+    Espressotimer.sendCommand(ON)
 end

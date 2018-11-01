@@ -1,0 +1,3 @@
+Number	waitingJobs	"Number of waiting print jobs on the printer [%s]"	{channel="ipp:printer:cb00f696:waitingJobs"}	
+Number 	doneJobs	"Number of completed print jobs on the printer [%s]"	{channel="ipp:printer:cb00f696:doneJobs"}
+Number 	jobs	        "Total number of print jobs on the printer [%s]"        {channel="ipp:printer:cb00f696:jobs"}
