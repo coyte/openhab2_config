@@ -1,6 +1,7 @@
 rule "Switch coffee machine off"
 when
-    Time cron "0 30 9 * * ?"
+    //Time cron "0 0 9 * * 1,3,4,5"
+    Time cron "0 0 9 ? * MON,WED,THU,FRI *"
 then
 	logInfo("rules","Rule espresso runs (off)")
    	 Espressotimer.sendCommand(OFF)

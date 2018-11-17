@@ -46,7 +46,21 @@ then
 end
 
 
+rule "Auto_fan_on"
+when
+    Time cron "0 45 06 * * ?"
+then
+	logInfo("rules","Ventilatie - Auto aan ochtend")
+	etage3Ventilatie3.sendCommand(ON)
+end
 
+rule "Auto_fan_off"
+when
+    Time cron "0 0 08 * * ?"
+then
+	logInfo("rules","Ventilatie - Auto uit ochtend")
+	etage3Ventilatie3.sendCommand(OFF)
+end
 
 
 rule "Auto_verwarming_badk_hoog_ochtend"

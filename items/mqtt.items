@@ -1,10 +1,10 @@
 Switch tasmota01 "tasmota01" <light> (LR,gLight) { mqtt=">[mosquitto:cmnd/tasmota01/power:command:*:default],<[mosquitto:stat/tasmota01/POWER:state:default]" }
 Switch tasmota02 "tasmota02" <light> (LR,gLight) { mqtt=">[mosquitto:cmnd/tasmota02/power:command:*:default],<[mosquitto:stat/tasmota02/POWER:state:default]" }
-Switch tasmota03 "tasmota03" <light> (LR,gLight) { mqtt=">[mosquitto:cmnd/tasmota03/power:command:*:default],<[mosquitto:stat/tasmota03/POWER:state:default]" }
+Switch tasmota03 "Lamp stoel" <light> (LR,gLight) { mqtt=">[mosquitto:cmnd/tasmota03/power:command:*:default],<[mosquitto:stat/tasmota03/POWER:state:default]" }
 Switch tasmota04 "tasmota04" <light> (LR,gLight) { mqtt=">[mosquitto:cmnd/tasmota04/power:command:*:default],<[mosquitto:stat/tasmota04/POWER:state:default]" }
 Switch tasmota05 "tasmota05" <light> (LR,gLight) { mqtt=">[mosquitto:cmnd/tasmota05/power:command:*:default],<[mosquitto:stat/tasmota05/POWER:state:default]" }
 Switch tasmota06 "tasmota06" <light> (LR,gLight) { mqtt=">[mosquitto:cmnd/tasmota06/power:command:*:default],<[mosquitto:stat/tasmota06/POWER:state:default]" }
 Switch tasmota07 "Lamp TV" <light> (LR,gLight) { mqtt=">[mosquitto:cmnd/tasmota07/power:command:*:default],<[mosquitto:stat/tasmota07/POWER:state:default]" }
-Switch tasmota08 "Lamp stoel" <light> (LR,gLight) { mqtt=">[mosquitto:cmnd/tasmota08/power:command:*:default],<[mosquitto:stat/tasmota08/POWER:state:default]" }
+//broker Switch tasmota08 "Lamp stoel" <light> (LR,gLight) { mqtt=">[mosquitto:cmnd/tasmota08/power:command:*:default],<[mosquitto:stat/tasmota08/POWER:state:default]" }
 Switch tasmota09 "Lamp bank" <light> (LR,gLight)  { mqtt=">[mosquitto:cmnd/tasmota09/power:command:*:default],<[mosquitto:stat/tasmota09/POWER:state:default]" }
 Switch tasmota10 "printer" <printer>                { mqtt=">[mosquitto:cmnd/tasmota10/power:command:*:default],<[mosquitto:stat/tasmota10/POWER:state:default]" }

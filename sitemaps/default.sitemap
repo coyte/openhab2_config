@@ -9,7 +9,7 @@ sitemap default label="Default" {
 	}
 
 	Frame label="1ste" {
-		Switch item=tasmota08
+		Switch item=tasmota03
 		Switch item=tasmota07
 		Default item=tasmota09
 	}
