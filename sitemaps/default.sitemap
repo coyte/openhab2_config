@@ -1,5 +1,15 @@
 sitemap default label="Default" {
 
+	Frame label="Kerst" {
+		Default item=jezus
+		Default item=tasmota01 label=kerstboom1
+		Default item=tasmota04 label=kerstboom2
+		Default item=tasmota02 label=buiten
+		Default item=tasmota11 label=ster
+		Default item=tasmota12 label=eiland
+		Default item=tasmota13 label=raam
+	}
+	
 	Frame label="BG" {
 		Switch item=ruleTrigger
 		Switch item=Espresso
@@ -36,7 +46,7 @@ sitemap default label="Default" {
 	}
 
 	Frame label="CCTV Camera" icon="cctvcam" {
-        Webview url="http://zoneminder/zm/cgi-bin/nph-zms?mode=jpeg&monitor=1&scale=50&maxfps=5&buffer=500" height=12
+	        Webview url="http://zoneminder/zm/cgi-bin/nph-zms?mode=jpeg&monitor=1&scale=50&maxfps=5&buffer=500" height=12
 	}
 
 	Frame label="Sensoren en melders" {
@@ -55,6 +65,8 @@ sitemap default label="Default" {
 		Switch item=tasmota05
 		Switch item=tasmota06
 		Switch item=tasmota10
+		Switch item=tasmota11
+
 	}
 		
  }

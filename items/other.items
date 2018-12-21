@@ -5,6 +5,7 @@
 //items for rules
 Switch ruleitem "ruleitem"
 Switch KeukenVerlichting "Verlichting" [ "Verlichting"]
+Switch jezus "Kindeke Jezus"
 
 //Switch node35_Switch "Aeotec Nano Dimmer Switch" { channel="zwave:device:62000b2a:node35:switch_binary" }
 //Dimmer node35_Dimmer "Aeotec Nano Dimmer Dimmer" { channel="zwave:device:62000b2a:node35:switch_dimmer" }

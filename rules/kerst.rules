@@ -1,0 +1,15 @@
+rule "Switch jezus off"
+when
+   Item jezus changed to OFF
+then
+	logInfo("rules","Turning Kerstverlichting (off)")
+   	gKerst.members.forEach[ i | i.sendCommand(OFF) ]
+end
+
+rule "Switch jezus on"
+when
+    Item jezus changed to ON
+then
+    logInfo("rules","Turning Kerstverlichting (on)")
+    gKerst.members.forEach[ i | i.sendCommand(ON) ]
+end
