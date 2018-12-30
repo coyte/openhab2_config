@@ -1,21 +1,29 @@
 sitemap default label="Default" {
 
 	Frame label="Kerst" {
-		Default item=jezus
-		Default item=tasmota01 label=kerstboom1
-		Default item=tasmota04 label=kerstboom2
-		Default item=tasmota02 label=buiten
-		Default item=tasmota11 label=ster
-		Default item=tasmota12 label=eiland
-		Default item=tasmota13 label=raam
+		Default item=jezus icon="santa"
+		Text label="Kerstverlichting" {
+			Default item=tasmota01 label=kerstboom1
+			Default item=tasmota04 label=kerstboom2
+			Default item=tasmota02 label=buiten
+			Default item=tasmota11 label=ster
+			Default item=tasmota12 label=eiland
+			Default item=tasmota13 label=raam
+		}
 	}
 	
-	Frame label="BG" {
-		Switch item=ruleTrigger
+	Frame label="Begane grond" {
+		//Switch item=ruleTrigger
 		Switch item=Espresso
 		Slider item=etage0KeukenEilandDimmer
 		Slider item=etage0KeukenTafelDimmer
 		Slider item=etage0KeukenKoofDimmer
+		Text label="Sensors" icon="chart" {
+			Text item=ShellyHtTemp0
+        	Text item=ShellyHtHumidity0
+			Text item=etage0WCTemperatuur
+			Text item=etage0WCHumidity
+		}
 	}
 
 	Frame label="1ste" {
@@ -27,6 +35,10 @@ sitemap default label="Default" {
 	Frame label="2de" {
 		Setpoint item=etage2BadkamerVerwarmingStand
 		Default item=tasmota10
+	    Text label="Sensors" icon="chart" {
+			Text item=ShellyHtTemp2
+       		Text item=ShellyHtHumidity2
+		}
 	}
 
     Frame label="Ventilatie" {
@@ -37,36 +49,40 @@ sitemap default label="Default" {
 
 
 	Frame label="Energy" icon="energy" {
-		Webview url="http://192.168.15.25:3000/d-solo/_rmIokMik/openhab?orgId=1&&from=now%2Fd&to=now&panelId=4&theme=light" height=12
 		Default item=emeter_delivery
         Default item=emeter_production
         Default item=pvEtoday
 		Default item=pvPac
 		Default item=pvEtotal
+		Text label="Energy chart" icon="line" {
+			Webview url="http://192.168.15.25:3000/d-solo/_rmIokMik/openhab?orgId=1&&from=now%2Fd&to=now&panelId=4&theme=light" height=12
+		}
 	}
 
-	Frame label="CCTV Camera" icon="cctvcam" {
-	        Webview url="http://zoneminder/zm/cgi-bin/nph-zms?mode=jpeg&monitor=1&scale=50&maxfps=5&buffer=500" height=12
-	}
 
 	Frame label="Sensoren en melders" {
-		Group item=gBattery
-		Group item=gSensor0
-		Group item=gSensor2
-		Group item=gTemp
-		Group item=gAlarm
+		Group item=gBattery icon="battery"
+		Group item=gSensorWC0 icon="toilet"
+		Group item=gSensorKeu icon="kitchen"
+		Group item=gSensorBK icon="bath"
+		Group item=gTemp icon=temperature
+		Group item=gAlarm icon="fire"
+		Text label="CCTV" icon="camera" {
+			Webview url="http://zoneminder/zm/cgi-bin/nph-zms?mode=jpeg&monitor=1&scale=50&maxfps=5&buffer=500" height=12
+		}
 	}
 
-	Frame label="Ongebruikte tasmota's" {
-		Switch item=tasmota01
-		Switch item=tasmota02
-		Switch item=tasmota03
-		Switch item=tasmota04
-		Switch item=tasmota05
-		Switch item=tasmota06
-		Switch item=tasmota10
-		Switch item=tasmota11
+	//Frame label="Ongebruikte tasmota's" {
+	//	Switch item=tasmota01
+	//	Switch item=tasmota02
+	//	Switch item=tasmota03
+	//	Switch item=tasmota04
+	//	Switch item=tasmota05
+	//	Switch item=tasmota06
+	//	Switch item=tasmota10
+	//	Switch item=tasmota11
 
-	}
-		
+//	}
+
+
  }

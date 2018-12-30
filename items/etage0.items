@@ -20,11 +20,11 @@ Dimmer etage0KeukenTafelDimmer		"Tafel"										[ "Lighting" ]			{ channel="zwa
 Contact etage0KeukenTafelSensor		"Tafel Sensor"													{ channel="zwave:device:62000b2a:node28:sensor_binary" }
 
 //Multisensor WC
-Contact etage0WCMotion			"Etage0 Motion [MAP(motion.map):%s]"		<motion>			(gSensor0)			{ channel="zwave:device:62000b2a:node2:sensor_binary" }
-Number  etage0WCHumidity		"Etage0 Humidity [%.1f %%]"			<humidity>			(gSensor0,gPersist)		{ channel="zwave:device:62000b2a:node2:sensor_relhumidity" }
-Number etage0WCTemperatuur		"Etage0 Temperatuur [%.1f °C]"			<temperature>			(gSensor0,gTemp,gPersist)	{ channel="zwave:device:62000b2a:node2:sensor_temperature" }
-Number  etage0WCLuminance		"Etage0 Luminantie [%.1f lux]"			<sun>				(gSensor0)			{ channel="zwave:device:62000b2a:node2:sensor_luminance" }
-Number  etage0WCBatterij		"Etage0 Battery [%s %%]"			<battery>			(gSensor0,gBattery)		{ channel="zwave:device:62000b2a:node2:battery-level" }
+Contact etage0WCMotion			"WC Motion [MAP(motion.map):%s]"		<motion>			(gSensor0)			{ channel="zwave:device:62000b2a:node2:sensor_binary" }
+Number  etage0WCHumidity		"WC Humidity [%.1f %%]"			<humidity>			(gSensor0,gPersist)		{ channel="zwave:device:62000b2a:node2:sensor_relhumidity" }
+Number etage0WCTemperatuur		"WC Temperatuur [%.1f °C]"			<temperature>			(gSensor0,gTemp,gPersist)	{ channel="zwave:device:62000b2a:node2:sensor_temperature" }
+Number  etage0WCLuminance		"WC Luminantie [%.1f lux]"			<sun>				(gSensor0)			{ channel="zwave:device:62000b2a:node2:sensor_luminance" }
+Number  etage0WCBatterij		"WC Battery [%s %%]"			<battery>			(gSensor0,gBattery)		{ channel="zwave:device:62000b2a:node2:battery-level" }
 
 //Brandmelder gang
 Number etage0BrandmelderTemperatuur	"Brandmelder 0 Temp [%.1f °C]"			<temperature>			(gTemp,gPersist)		{ channel="zwave:device:62000b2a:node39:sensor_temperature" }

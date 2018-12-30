@@ -5,10 +5,18 @@ Switch tasmota04 "tasmota04" <switch> (gKerst) { mqtt=">[mosquitto:cmnd/tasmota0
 Switch tasmota05 "tasmota05" <switch> (LR,gLight) { mqtt=">[mosquitto:cmnd/tasmota05/power:command:*:default],<[mosquitto:stat/tasmota05/POWER:state:default]" }
 Switch tasmota06 "tasmota06" <switch> (LR,gLight) { mqtt=">[mosquitto:cmnd/tasmota06/power:command:*:default],<[mosquitto:stat/tasmota06/POWER:state:default]" }
 Switch tasmota07 "Lamp TV" <switch> (LR,gLight) { mqtt=">[mosquitto:cmnd/tasmota07/power:command:*:default],<[mosquitto:stat/tasmota07/POWER:state:default]" }
-//broker Switch tasmota08 "Lamp stoel" <light> (LR,gLight) { mqtt=">[mosquitto:cmnd/tasmota08/power:command:*:default],<[mosquitto:stat/tasmota08/POWER:state:default]" }
+//broken Switch tasmota08 "Lamp stoel" <light> (LR,gLight) { mqtt=">[mosquitto:cmnd/tasmota08/power:command:*:default],<[mosquitto:stat/tasmota08/POWER:state:default]" }
 Switch tasmota09 "Lamp bank" <switch> (LR,gLight)  { mqtt=">[mosquitto:cmnd/tasmota09/power:command:*:default],<[mosquitto:stat/tasmota09/POWER:state:default]" }
 Switch tasmota10 "printer" <printer>                { mqtt=">[mosquitto:cmnd/tasmota10/power:command:*:default],<[mosquitto:stat/tasmota10/POWER:state:default]" }
-Switch tasmota11 "tasmota11" <poweroutlet> (gKerst)               { mqtt=">[mosquitto:cmnd/tasmota11/power:command:*:default],<[mosquitto:stat/tasmota11/POWER:state:default]" }
-Switch tasmota12 "tasmota12" <poweroutlet> (gKerst)               { mqtt=">[mosquitto:cmnd/tasmota12/power:command:*:default],<[mosquitto:stat/tasmota12/POWER:state:default]" }
-Switch tasmota13 "tasmota13" <poweroutlet> (gKerst)               { mqtt=">[mosquitto:cmnd/tasmota13/power:command:*:default],<[mosquitto:stat/tasmota13/POWER:state:default]" }
+Switch tasmota11 "tasmota11" <switch> (gKerst)               { mqtt=">[mosquitto:cmnd/tasmota11/power:command:*:default],<[mosquitto:stat/tasmota11/POWER:state:default]" }
+Switch tasmota12 "tasmota12" <switch> (gKerst)               { mqtt=">[mosquitto:cmnd/tasmota12/power:command:*:default],<[mosquitto:stat/tasmota12/POWER:state:default]" }
+Switch tasmota13 "tasmota13" <switch> (gKerst)               { mqtt=">[mosquitto:cmnd/tasmota13/power:command:*:default],<[mosquitto:stat/tasmota13/POWER:state:default]" }
+
+// ShellyHT
+//Number ShellyHtTemp0     "Keuken Temperatuur [%.1f °C]"    <temperature>   (gSensorKeu,gTemp,gPersist) { mqtt="<[mosquitto:shellies/shellyht-5A8AAF/sensor/temperature:state:default]" }
+//Number ShellyHtHumidity0 "Keuken Vochtigheid [%.1f %%]"    <humidity>      (gSensorKeu,gPersist)       { mqtt="<[mosquitto:shellies/shellyht-5A8AAF/sensor/humidity:state:default]" }
+//Number ShellyHtBattery0  "Keuken Batterij [%s %%]"         <battery>       (gSensorKeu,gBattery)       { mqtt="<[mosquitto:shellies/shellyht-5A8AAF/sensor/battery:state:default]" }
+//Number ShellyHtTemp2     "Badkamer Temperatuur [%.1f °C]"  <temperature>   (gSensorBK,gTemp,gPersist)  { mqtt="<[mosquitto:shellies/shellyht-22C653/sensor/temperature:state:default]" }
+//Number ShellyHtHumidity2 "Badkamer Vochtigheid [%.1f %%]"  <humidity>      (gSensorBK,gPersist)        { mqtt="<[mosquitto:shellies/shellyht-22C653/sensor/humidity:state:default]" }
+//Number ShellyHtBattery2  "Badkamer Batterij [%s %%]"       <battery>       (gSensorBK,gBattery)        { mqtt="<[mosquitto:shellies/shellyht-22C653/sensor/battery:state:default]" }
 

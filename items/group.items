@@ -1,9 +1,12 @@
 Group gBattery  "Batterijen"
-Group gSensor0  "Sensor BG"
-Group gSensor2  "Sensor 2de etage"
+Group gSensorWC0  "Sensor WC"
+Group gSensorKeu  "Sensor keuken"
+Group gSensorBK  "Sensor badkamer"
 Group gTemp     "Temperatuur"
 Group gAlarm    "Alarm"
 Group gPv		"Zonnepanelen"
 Group gP1		"Electriciteitsmeter"
 Group gPersist	"Naar DB"
 Group gKerst     "Kerst versiering"
+
+
